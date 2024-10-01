@@ -29,3 +29,25 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('#password').type(password)
     cy.get('#submit').click()
 })
+
+Cypress.Commands.add('loginswag', (username, password) => {
+    if (username) {
+        cy.get('[data-test="username"]').type(username)
+    }
+    if (password) {
+        cy.get('[data-test="password"]').type(password)
+    }
+    cy.get('[data-test="login-button"]').click()
+})
+
+Cypress.Commands.add('buy', (Firstname, Lastname, Code) => {
+    if (Firstname) {
+        cy.get('[data-test="firstName"]').type('Kongkeart')
+    }
+    if (Lastname) {
+        cy.get('[data-test="lastName"]').type('Narakulmongkol')
+    }
+    if (Code) {
+        cy.get('[data-test="postalCode"]').type('Promocode')
+    }
+})
